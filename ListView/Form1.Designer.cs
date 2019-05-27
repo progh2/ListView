@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.lvView = new System.Windows.Forms.ListView();
+            this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chWork = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtAge = new System.Windows.Forms.TextBox();
@@ -36,9 +39,6 @@
             this.lblAge = new System.Windows.Forms.Label();
             this.lblWork = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chWork = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lvView
@@ -49,69 +49,14 @@
             this.chWork});
             this.lvView.FullRowSelect = true;
             this.lvView.GridLines = true;
-            this.lvView.Location = new System.Drawing.Point(13, 13);
+            this.lvView.Location = new System.Drawing.Point(15, 16);
+            this.lvView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lvView.Name = "lvView";
-            this.lvView.Size = new System.Drawing.Size(356, 144);
+            this.lvView.Size = new System.Drawing.Size(406, 179);
             this.lvView.TabIndex = 0;
             this.lvView.UseCompatibleStateImageBehavior = false;
             this.lvView.View = System.Windows.Forms.View.Details;
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(14, 167);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(41, 12);
-            this.lblName.TabIndex = 1;
-            this.lblName.Text = "이름 : ";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(58, 164);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(228, 21);
-            this.txtName.TabIndex = 2;
-            // 
-            // txtAge
-            // 
-            this.txtAge.Location = new System.Drawing.Point(58, 191);
-            this.txtAge.Name = "txtAge";
-            this.txtAge.Size = new System.Drawing.Size(228, 21);
-            this.txtAge.TabIndex = 3;
-            // 
-            // txtWork
-            // 
-            this.txtWork.Location = new System.Drawing.Point(58, 218);
-            this.txtWork.Name = "txtWork";
-            this.txtWork.Size = new System.Drawing.Size(228, 21);
-            this.txtWork.TabIndex = 4;
-            // 
-            // lblAge
-            // 
-            this.lblAge.AutoSize = true;
-            this.lblAge.Location = new System.Drawing.Point(14, 194);
-            this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(41, 12);
-            this.lblAge.TabIndex = 5;
-            this.lblAge.Text = "나이 : ";
-            // 
-            // lblWork
-            // 
-            this.lblWork.AutoSize = true;
-            this.lblWork.Location = new System.Drawing.Point(14, 221);
-            this.lblWork.Name = "lblWork";
-            this.lblWork.Size = new System.Drawing.Size(41, 12);
-            this.lblWork.TabIndex = 6;
-            this.lblWork.Text = "직업 : ";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(292, 164);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(77, 76);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "추가";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.lvView.Click += new System.EventHandler(this.lvView_Click);
             // 
             // chName
             // 
@@ -128,11 +73,73 @@
             this.chWork.Text = "직업";
             this.chWork.Width = 150;
             // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(16, 209);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(52, 15);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "이름 : ";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(66, 205);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(260, 25);
+            this.txtName.TabIndex = 2;
+            // 
+            // txtAge
+            // 
+            this.txtAge.Location = new System.Drawing.Point(66, 239);
+            this.txtAge.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Size = new System.Drawing.Size(260, 25);
+            this.txtAge.TabIndex = 3;
+            // 
+            // txtWork
+            // 
+            this.txtWork.Location = new System.Drawing.Point(66, 272);
+            this.txtWork.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtWork.Name = "txtWork";
+            this.txtWork.Size = new System.Drawing.Size(260, 25);
+            this.txtWork.TabIndex = 4;
+            // 
+            // lblAge
+            // 
+            this.lblAge.AutoSize = true;
+            this.lblAge.Location = new System.Drawing.Point(16, 242);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(52, 15);
+            this.lblAge.TabIndex = 5;
+            this.lblAge.Text = "나이 : ";
+            // 
+            // lblWork
+            // 
+            this.lblWork.AutoSize = true;
+            this.lblWork.Location = new System.Drawing.Point(16, 276);
+            this.lblWork.Name = "lblWork";
+            this.lblWork.Size = new System.Drawing.Size(52, 15);
+            this.lblWork.TabIndex = 6;
+            this.lblWork.Text = "직업 : ";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(334, 205);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(88, 95);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "추가";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 252);
+            this.ClientSize = new System.Drawing.Size(435, 315);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblWork);
             this.Controls.Add(this.lblAge);
@@ -142,6 +149,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lvView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "입력 목록 보기";
